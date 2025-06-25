@@ -1,19 +1,15 @@
+// src/components/Navbar.jsx
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
+  return (
+    <nav className="navbar navbar-light bg-light px-4">
+      <Link to="/" className="navbar-brand"> Contactos</Link>
 
-	return (
-		<nav className="navbar navbar-light bg-light">
-			<div className="container">
-				<Link to="/">
-					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
-				</Link>
-				<div className="ml-auto">
-					<Link to="/demo">
-						<button className="btn btn-primary">Check the Context in action</button>
-					</Link>
-				</div>
-			</div>
-		</nav>
-	);
+      <div className="ml-auto d-flex gap-2">
+        <Link to="/add" className="btn btn-outline-primary me-2"> + Nuevo Contacto</Link>
+        <Link to="/" className="btn btn-outline-secondary">Inicio</Link>
+      </div>
+    </nav>
+  );
 };

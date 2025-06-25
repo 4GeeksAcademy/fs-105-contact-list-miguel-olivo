@@ -18,10 +18,14 @@ const Contact = () => {
     <div className="container mt-4">
       <h2>Agenda de Contactos</h2>
       <Link to="/add" className="btn btn-primary mb-3">+ Nuevo Contacto</Link>
-      {listaContactos.length === 0 && <p>No hay contactos disponibles.</p>}
-      {listaContactos.map(contact => (
-        <ContactCard key={contact.id} contact={contact} />
-      ))}
+      {Array.isArray(listaContactos) && listaContactos.length === 0 && (
+  <p>No hay contactos disponibles.</p>
+)}
+
+     {Array.isArray(listaContactos) && listaContactos.map(contact => (
+  <ContactCard key={contact.id} contact={contact} />
+))}
+
     </div>
   );
 };
